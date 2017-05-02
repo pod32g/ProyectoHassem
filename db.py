@@ -1,6 +1,6 @@
 import MySQLdb
 
-conexion = MySQLdb.connect('localhost','root','','ProyectoHassem')
+conexion = MySQLdb.connect('192.168.137.187','root','','ProyectoHassem')
 
 cursor = conexion.cursor()
 
