@@ -1,8 +1,8 @@
 import MySQLdb
 
-conexion = MySQLdb.connect('192.168.137.187','root','','ProyectoHassem')
+conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
 
 cursor = conexion.cursor()
 
-sentencia = 'INSERT INTO Usuario (nonbre) VALUES (Gerardo Vega)'
+sentencia = 'SELECT * FROM Tabla1;'
 cursor.execute(sentencia)
