@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="utj">
+<head>
+	<title>UTJ</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+	<link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='jumbotron-narrow.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<div class="header">
+    <nav>
+        <ul class="nav nav-pills pull-right">
+        	{% if not session.logged_in %}
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="login">Iniciar sesion</a></li>
+            <li role="presentation"><a href="showSignUp">Registrarse</a></li>
+            {% else %}
+            <li role="presentation" class="active"><a href="/">Home</a></li>
+            <li role="presentation"><a href="/logout">Usuario</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <h3 class="text-muted">Proyectos UTJ</h3>
+</div>
+
+{% block body %}{% endblock %}
+
+<footer class="footer">
+    <p>&copy; pod32g & Vega 2017</p>
+</footer>
+</body>
+</html>
