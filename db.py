@@ -2,7 +2,7 @@ import MySQLdb
 
 def consulta(sentencia):
 	lista = []
-	conexion = MySQLdb.connect(#host,usuario,password,database)
+	conexion = MySQLdb.connect('host','usuario','password','database')
 	cursor = conexion.cursor()
 	cursor.execute(sentencia)
 	filas = cursor.fetchall() #fetchall() extrae todos los registros que cumplen la condicion especificada
