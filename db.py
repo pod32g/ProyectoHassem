@@ -25,7 +25,7 @@ def consulta(sentencia):
 
 #Funcion que verifica si un regisrtro ya existe
 def existe(tabla,atributo,valor):
-	sentencia = "SELECT * FROM " + tabla + " WHERE " + atributo + " = " + valor + ";"
+	sentencia = "SELECT * FROM " + tabla + " WHERE " + atributo + " = '" + valor + "';"
 	print(sentencia)
 	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
 	cursor = conexion.cursor()
