@@ -26,12 +26,18 @@ def consulta(sentencia):
 #Funcion que verifica si un regisrtro ya existe
 def existe(tabla,atributo,valor):
 	sentencia = "SELECT * FROM " + tabla + " WHERE " + atributo + " = '" + valor + "';"
-	print(sentencia)
 	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
 	cursor = conexion.cursor()
 	cursor.execute(sentencia)
+	obtenido = cursor.fetchall()
 	conexion.commit()
 	conexion.close()
-	print obtenido #Quiero saber el valor obtenido para saber que retornar, pero no llega hasta aqui men, truena en el execute
+	if (len(obtenido)==0):
+		return False
+	else:
+		return True
 
-existe('test','nombre','Jorge')
+llamada1 = existe('test','nombre','Jorgw')
+llamada2 = existe('test','nombre','Jorge')
+print(llamada1)
+print(llamada2)
