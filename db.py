@@ -17,15 +17,10 @@ def consulta(sentencia):
 	conexion.close()
 	return lista
 
-#sentencia = "SELECT * FROM test WHERE ciudad = 'Guadalajara';"
-#datos = consulta(sentencia)
-
-#datos = consulta(sentencia)
-#print(datos)
-
-#Funcion que verifica si un regisrtro ya existe
-def existe(tabla,atributo,valor):
-	sentencia = "SELECT * FROM " + tabla + " WHERE " + atributo + " = '" + valor + "';"
+#Funcion que verifica si un nombre de usuario ya existe
+def existeUsuario(userName):
+	sentencia = "SELECT * FROM Usuario WHERE userName = '" + userName + "';"
+	#print(sentencia)
 	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
 	cursor = conexion.cursor()
 	cursor.execute(sentencia)
@@ -37,7 +32,16 @@ def existe(tabla,atributo,valor):
 	else:
 		return True
 
-llamada1 = existe('test','nombre','Jorgw')
-llamada2 = existe('test','nombre','Jorge')
-print(llamada1)
-print(llamada2)
+def correctPassword(userName,password):
+	sentencia = "SELECT * FROM Usuario WHERE userName = '"+ userName + "' AND password = '" + password + "';"
+	print(sentencia)
+	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
+	cursor = conexion.cursor()
+	cursor.execute(sentencia)
+	obtenido = cursor.fetchall()
+	conexion.commit()
+	conexion.close()
+	if (len(obtenido)==0):
+		return False
+	else:
+		return True
