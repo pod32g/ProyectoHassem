@@ -2,7 +2,7 @@ import MySQLdb
 #Funcion que retorna en una lista todos los registros de la tabla
 def consulta(sentencia):
 	lista = []
-	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
+	conexion = MySQLdb.connect('pod32g.mysql.pythonanywhere-services.com','pod32g','q35eJUXUZmjXSXs','pod32g$ProyectoUTJ')
 	cursor = conexion.cursor()
 	cursor.execute(sentencia)
 	filas = cursor.fetchall() #fetchall() extrae todos los registros que cumplen la condicion especificada
@@ -21,7 +21,7 @@ def consulta(sentencia):
 def existeUsuario(userName):
 	sentencia = "SELECT * FROM Usuario WHERE userName = '" + userName + "';"
 	#print(sentencia)
-	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
+	conexion = MySQLdb.connect('pod32g.mysql.pythonanywhere-services.com','pod32g','q35eJUXUZmjXSXs','pod32g$ProyectoUTJ')
 	cursor = conexion.cursor()
 	cursor.execute(sentencia)
 	obtenido = cursor.fetchall()
@@ -34,7 +34,7 @@ def existeUsuario(userName):
 
 #Funcion que verifica si un password esta correcto
 def correctPassword(userName,password):
-	sentencia = "SELECT * FROM Usuario WHERE userName = '"+ userName + "' AND password = '" + password + "';"
+	conexion = MySQLdb.connect('pod32g.mysql.pythonanywhere-services.com','pod32g','q35eJUXUZmjXSXs','pod32g$ProyectoUTJ')
 	#print(sentencia)
 	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
 	cursor = conexion.cursor()
@@ -47,11 +47,14 @@ def correctPassword(userName,password):
 	else:
 		return True
 
+#Insert de la tabla 'Usuario'
 def nuevoUsuario(userName,password):
 	sentencia = "INSERT INTO Usuario (userName,password) VALUES ('"+ userName +"','"+ password + "');"
 	#print(sentencia)
-	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
+	conexion = MySQLdb.connect('pod32g.mysql.pythonanywhere-services.com','pod32g','q35eJUXUZmjXSXs','pod32g$ProyectoUTJ')
 	cursor = conexion.cursor()
 	cursor.execute(sentencia)
 	conexion.commit()
 	conexion.close()
+
+llamada = nuevoUsuario('Vega','QwertY')
