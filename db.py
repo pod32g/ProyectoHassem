@@ -46,3 +46,12 @@ def correctPassword(userName,password):
 		return False
 	else:
 		return True
+
+def nuevoUsuario(userName,password):
+	sentencia = "INSERT INTO Usuario (userName,password) VALUES ('"+ userName +"','"+ password + "');"
+	#print(sentencia)
+	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
+	cursor = conexion.cursor()
+	cursor.execute(sentencia)
+	conexion.commit()
+	conexion.close()
