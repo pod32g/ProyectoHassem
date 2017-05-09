@@ -1,77 +1,81 @@
--- MySQL dump 10.13  Distrib 5.5.55, for debian-linux-gnu (x86_64)
---
--- Host: localhost    Database: ProyectoHassem
--- ------------------------------------------------------
--- Server version	5.5.55-0ubuntu0.14.04.1
+CREATE TABLE `Usuario` (
+	`id` int NOT NULL,
+	`userName` varchar(70) NOT NULL UNIQUE,
+	`password` varchar(70) NOT NULL UNIQUE,
+	PRIMARY KEY (`id`)
+);
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE TABLE `DatosUsuario` (
+	`usuario_id` int NOT NULL,
+	`nombre1` varchar(50) NOT NULL,
+	`nombre2` varchar(50),
+	`apellidoMaterno` varchar(50),
+	`apellidoPaterno` varchar(50),
+	FOREIGN KEY (`usuario_id`) REFERENCES `Usuario`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+)
 
---
--- Table structure for table `Tabla1`
---
+ENGINE = InnoDB;
 
-DROP TABLE IF EXISTS `Tabla1`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Tabla1` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `Alumnos` (
+	`matricula` int NOT NULL AUTO_INCREMENT,
+	`usuario_id` int NOT NULL,
+	`carrera` varchar(70) NOT NULL,
+	`nivel` varchar(30) NOT NULL,
+	`turno` varchar(30) NOT NULL,
+	PRIMARY KEY (`matricula`),
+	FOREIGN KEY (`usuario_id`) REFERENCES `Usuario`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+)
 
---
--- Dumping data for table `Tabla1`
---
+ENGINE = InnoDB;
 
-LOCK TABLES `Tabla1` WRITE;
-/*!40000 ALTER TABLE `Tabla1` DISABLE KEYS */;
-INSERT INTO `Tabla1` VALUES (1,'Gerardo'),(2,'Jorge'),(3,'Hugo'),(4,'Pepe'),(5,'Francisco'),(6,'Lizbeth'),(7,'David'),(12,'Gerardo'),(15,'Fernando');
-/*!40000 ALTER TABLE `Tabla1` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE `TipoUsuario` (
+	`usuario_id` int NOT NULL,
+	`tipo` varchar(10) NOT NULL,
+	FOREIGN KEY (`usuario_id`) REFERENCES `Usuario`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+)
 
---
--- Table structure for table `test`
---
+ENGINE = InnoDB;
 
-DROP TABLE IF EXISTS `test`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `test` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) NOT NULL,
-  `edad` int(11) NOT NULL,
-  `ciudad` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `Profesores` (
+	`codigo` int(50) NOT NULL AUTO_INCREMENT,
+	`usuario_id` int NOT NULL,
+	`carrera` varchar(50) NOT NULL,
+	PRIMARY KEY (`codigo`),
+	FOREIGN KEY (`usuario_id`) REFERENCES `Usuario`(`id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
 
---
--- Dumping data for table `test`
---
+ENGINE = InnoDB;
 
-LOCK TABLES `test` WRITE;
-/*!40000 ALTER TABLE `test` DISABLE KEYS */;
-INSERT INTO `test` VALUES (1,'Gerardo',20,'Guadalajara'),(2,'Lizbeth',22,'Guadalajara'),(3,'Jorge',22,'Puerto Vallarta'),(4,'Francisco',20,'Guadalajara');
-/*!40000 ALTER TABLE `test` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+CREATE TABLE `DatosContacto` (
+	`id_usuario` int NOT NULL,
+	`correo` varchar(70) NOT NULL UNIQUE,
+	`cargo` varchar(70) NOT NULL,
+	`telefono` varchar(70) NOT NULL,
+	FOREIGN KEY (`id_usuario`) REFERENCES `Usuario`(`id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+ENGINE = InnoDB;
 
--- Dump completed on 2017-05-07 21:03:01
+CREATE TABLE `Empresa` (
+	`id_usuario` int NOT NULL,
+	`nombre` varchar(70) NOT NULL,
+	FOREIGN KEY (`id_usuario`) REFERENCES `Usuario`(`id`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+
+ENGINE = InnoDB;
+
+CREATE TABLE `Proyecto` (
+	`id` int NOT NULL,
+	`nombre` varchar(70) NOT NULL UNIQUE,
+	`fechaInicio` DATE NOT NULL,
+	`fechaFin` DATE NOT NULL,
+	`resultados` longtext NOT NULL,
+	`objetivo` mediumtext NOT NULL,
+	`alumno_encargado` int NOT NULL,
+	`maestro_encargado` int NOT NULL,
+	PRIMARY KEY (`id`),
+	FOREIGN KEY (`alumno_encargado`) REFERENCES `Alumnos`(`matricula`) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (`maestro_encargado`) REFERENCES `Profesores`(`codigo`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+
+ENGINE = InnoDB;
