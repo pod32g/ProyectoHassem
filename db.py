@@ -31,11 +31,11 @@ def existeUsuario(userName):
 		return False
 	else:
 		return True
-		
+
 #Funcion que verifica si un password esta correcto
 def correctPassword(userName,password):
 	sentencia = "SELECT * FROM Usuario WHERE userName = '"+ userName + "' AND password = '" + password + "';"
-	print(sentencia)
+	#print(sentencia)
 	conexion = MySQLdb.connect('localhost','root','Lizbeth','ProyectoHassem')
 	cursor = conexion.cursor()
 	cursor.execute(sentencia)
