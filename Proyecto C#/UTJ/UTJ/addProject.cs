@@ -17,6 +17,18 @@ namespace UTJ
 	/// </summary>
 	public partial class addProject : Form
 	{
+        private db d = new db();
+
+        private void clear() {
+            txtCompany.Text = "";
+            txtName.Text = "";
+            txtObjective.Text = "";
+            txtStudent.Text = "";
+            txtTeacher.Text = "";
+            dateStart.Value = DateTime.Now;
+            dateEnd.Value = DateTime.Now;
+        }
+
 		public addProject()
 		{
 			//
@@ -31,6 +43,19 @@ namespace UTJ
 
         private void btnCancelar_Click(object sender, EventArgs e) {
             this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e) {
+            try {
+                if (d.addProject(txtName.Text, dateStart.Value.ToString("yyyy-MM-dd"), dateEnd.Value.ToString("yyyy-MM-dd"), "en marcha", "", txtObjective.Text, int.Parse(txtStudent.Text), int.Parse(txtTeacher.Text), txtCompany.Text)) {
+                    MessageBox.Show("Proyecto Agregado");
+                    this.clear();
+                } else {
+                    MessageBox.Show("Hubo un error al agregar el proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } catch(Exception ex) {
+                MessageBox.Show("Ocurrio un error al procesar los datos, verifique que los datos sean correctos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

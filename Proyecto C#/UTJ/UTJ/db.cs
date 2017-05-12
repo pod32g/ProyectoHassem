@@ -196,11 +196,11 @@ namespace UTJ {
             return false;
         }
 
-        public bool addProject(string nombre, string inicio, string fin, string status, string result, string objective, int student, int teacher) {
+        public bool addProject(string nombre, string inicio, string fin, string status, string result, string objective, int student, int teacher, string company) {
             MySqlConnection con = this.connect();
             con.Open();
-            MySqlCommand comando = new MySqlCommand(String.Format("INSERT INTO Proyecto (nombre, fechaInicio, fechaFin, estatus, resultados, objetivo, alumno_encargado, maestro_encargado) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}');",
-                                                    nombre, inicio, fin, status, result, objective, student, teacher), con);
+            MySqlCommand comando = new MySqlCommand(String.Format("INSERT INTO Proyecto (nombre, fechaInicio, fechaFin, estatus, resultados, objetivo, alumno_encargado, maestro_encargado, empresa) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}');",
+                                                    nombre, inicio, fin, status, result, objective, student, teacher, company), con);
             int updatedRows = comando.ExecuteNonQuery();
             Console.WriteLine("Proyecto Rows: " + updatedRows);
             if (updatedRows > 0) {
@@ -287,11 +287,11 @@ namespace UTJ {
             return false;
         }
 
-        public bool updateProject(int id, string nombre, string inicio, string fin, string status, string result, string objective, int student, int teacher) {
+        public bool updateProject(int id, string nombre, string inicio, string fin, string status, string result, string objective, int student, int teacher, string company) {
             MySqlConnection con = this.connect();
             con.Open();
-            MySqlCommand comando = new MySqlCommand(String.Format("UPDATE Proyecto SET nombre = '{0}', fechaInicio='{1}', fechaFin='{2}', estatus'{3}', resultados='{4}', objetivo='{5}', alumno_encargado='{6}', maestro_encargado='{7}' WHERE id = '{8}';",
-                                                    nombre, inicio, fin, status, result, objective, student, teacher, id), con);
+            MySqlCommand comando = new MySqlCommand(String.Format("UPDATE Proyecto SET nombre = '{0}', fechaInicio='{1}', fechaFin='{2}', estatus'{3}', resultados='{4}', objetivo='{5}', alumno_encargado='{6}', maestro_encargado='{7}', empresa='{9}' WHERE id = '{8}';",
+                                                    nombre, inicio, fin, status, result, objective, student, teacher, id, company), con);
             int updatedRows = comando.ExecuteNonQuery();
             Console.WriteLine("Proyecto Rows: " + updatedRows);
             if (updatedRows > 0) {
@@ -324,8 +324,7 @@ namespace UTJ {
                                                     user, pass, id), con);
             int updatedRows = comando.ExecuteNonQuery();
             Console.WriteLine("TipoUsuario Rows: " + updatedRows);
-            if (updatedRows > 0)
-            {
+            if (updatedRows > 0) {
                 con.Close();
                 return true;
             }
@@ -448,6 +447,58 @@ namespace UTJ {
                 data["password"] = myReader.GetString(myReader.GetOrdinal("password"));
             }
             return data;
+        }
+
+        public Dictionary<string, string> getProyect(string nombre) {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            MySqlConnection conexion = this.connect();
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM Proyecto WHERE nombre = '{0}';", nombre), conexion);
+            conexion.Open();
+            MySqlDataReader myReader;
+            myReader = comando.ExecuteReader();
+            while (myReader.Read()) {
+                data["id"] = myReader.GetInt32(myReader.GetOrdinal("id")).ToString();
+                data["nombre"] = myReader.GetString(myReader.GetOrdinal("nombre"));
+                data["inicio"] = myReader.GetString(myReader.GetOrdinal("fechaInicio"));
+                data["fin"] = myReader.GetString(myReader.GetOrdinal("fechaFin"));
+                data["estatus"] = myReader.GetString(myReader.GetOrdinal("estatus"));
+                data["result"] = myReader.GetString(myReader.GetOrdinal("resultados"));
+                data["objetivo"] = myReader.GetString(myReader.GetOrdinal("objetivo"));
+                data["alumno"] = myReader.GetString(myReader.GetOrdinal("alumno_encargado"));
+                data["maestro"] = myReader.GetString(myReader.GetOrdinal("maestro_encargado"));
+                data["empresa"] = myReader.GetString(myReader.GetOrdinal("empresa"));
+            }
+            return data;
+        }
+
+        public bool deleteUser(int id) {
+            MySqlConnection con = this.connect();
+            con.Open();
+            MySqlCommand comando = new MySqlCommand(String.Format("DELETE FROM Usuario WHERE id='{0}';",
+                                                    id), con);
+            int updatedRows = comando.ExecuteNonQuery();
+            Console.WriteLine("Usuario Rows: " + updatedRows);
+            if (updatedRows > 0) {
+                con.Close();
+                return true;
+            }
+            con.Close();
+            return false;
+        }
+
+        public bool deleteProject(int id) {
+            MySqlConnection con = this.connect();
+            con.Open();
+            MySqlCommand comando = new MySqlCommand(String.Format("DELETE FROM Proyecto WHERE id='{0}';",
+                                                    id), con);
+            int updatedRows = comando.ExecuteNonQuery();
+            Console.WriteLine("Proyecto Rows: " + updatedRows);
+            if (updatedRows > 0) {
+                con.Close();
+                return true;
+            }
+            con.Close();
+            return false;
         }
 
         public db() {

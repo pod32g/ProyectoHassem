@@ -74,9 +74,11 @@ CREATE TABLE `Proyecto` (
 	`objetivo` mediumtext NOT NULL,
 	`alumno_encargado` int NOT NULL,
 	`maestro_encargado` int NOT NULL,
+	`empresa` varchar(70) NOT NULL,
 	PRIMARY KEY (`id`),
 	FOREIGN KEY (`alumno_encargado`) REFERENCES `Alumnos`(`matricula`) ON UPDATE CASCADE ON DELETE CASCADE,
-	FOREIGN KEY (`maestro_encargado`) REFERENCES `Profesores`(`codigo`) ON UPDATE CASCADE ON DELETE CASCADE
+	FOREIGN KEY (`maestro_encargado`) REFERENCES `Profesores`(`codigo`) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (`empresa`) REFERENCES `Empresa`(`nombre`) ON UPDATE CASCADE ON DELETE CASCADE
 )
 
 ENGINE = InnoDB;

@@ -51,7 +51,6 @@ namespace UTJ
             this.txtTeacher = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -176,23 +175,13 @@ namespace UTJ
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(555, 373);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(105, 23);
-            this.btnCancelar.TabIndex = 15;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // addProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 408);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtTeacher);
             this.Controls.Add(this.label7);
@@ -230,6 +219,5 @@ namespace UTJ
         private System.Windows.Forms.TextBox txtTeacher;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancelar;
     }
 }

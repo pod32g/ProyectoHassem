@@ -31,6 +31,7 @@ namespace UTJ
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new admin());
             if (type == "admin") {
                 Application.Run(new admin());
             }

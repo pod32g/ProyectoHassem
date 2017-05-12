@@ -73,11 +73,13 @@ namespace UTJ
         }
 
         private void eliminarUsuarioToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            var del = new deleteUser();
+            del.Show();
         }
 
         private void buscarUsuarioToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            var se = new searchUser();
+            se.Show();
         }
 
         private void agregarProyectoToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -86,7 +88,8 @@ namespace UTJ
         }
 
         private void modificarProyectToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            var mod = new editProject();
+            mod.Show();
         }
 
         private void eliminarProyectoToolStripMenuItem_Click(object sender, EventArgs e) {

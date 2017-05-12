@@ -116,7 +116,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Name = "addResults";
-            this.Text = "addResults";
+            this.Text = "Resultados";
             this.ResumeLayout(false);
             this.PerformLayout();
 
