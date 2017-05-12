@@ -33,13 +33,19 @@
             this.txtName2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtPasswd = new System.Windows.Forms.TextBox();
             this.combUsrType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -124,20 +130,20 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Contraseña:";
             // 
-            // textBox1
+            // txtUserName
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 134);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtUserName.Location = new System.Drawing.Point(16, 134);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(257, 20);
+            this.txtUserName.TabIndex = 7;
             // 
-            // textBox2
+            // txtPasswd
             // 
-            this.textBox2.Location = new System.Drawing.Point(425, 134);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(257, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtPasswd.Location = new System.Drawing.Point(425, 134);
+            this.txtPasswd.Name = "txtPasswd";
+            this.txtPasswd.PasswordChar = '*';
+            this.txtPasswd.Size = new System.Drawing.Size(257, 20);
+            this.txtPasswd.TabIndex = 8;
             // 
             // combUsrType
             // 
@@ -153,6 +159,7 @@
             this.combUsrType.Name = "combUsrType";
             this.combUsrType.Size = new System.Drawing.Size(121, 21);
             this.combUsrType.TabIndex = 9;
+            this.combUsrType.SelectedIndexChanged += new System.EventHandler(this.combUsrType_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -168,9 +175,10 @@
             this.btnSave.Location = new System.Drawing.Point(624, 348);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(111, 28);
-            this.btnSave.TabIndex = 11;
+            this.btnSave.TabIndex = 20;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label8
             // 
@@ -186,20 +194,74 @@
             this.txtCode.Location = new System.Drawing.Point(425, 216);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(257, 20);
-            this.txtCode.TabIndex = 13;
+            this.txtCode.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 263);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Correo:";
+            // 
+            // txtMail
+            // 
+            this.txtMail.Location = new System.Drawing.Point(16, 279);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(257, 20);
+            this.txtMail.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 312);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Cargo:";
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Location = new System.Drawing.Point(16, 328);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(257, 20);
+            this.txtPosition.TabIndex = 16;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(422, 263);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 13);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Telefono:";
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(425, 279);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(257, 20);
+            this.txtPhone.TabIndex = 18;
             // 
             // addUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 388);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtPosition);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtMail);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.combUsrType);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPasswd);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtName2);
@@ -229,12 +291,18 @@
         private System.Windows.Forms.TextBox txtName2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtPasswd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ComboBox combUsrType;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtPhone;
     }
 }

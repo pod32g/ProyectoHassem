@@ -16,15 +16,41 @@ namespace UTJ
 	/// </summary>
 	internal sealed class Program
 	{
-		/// <summary>
-		/// Program entry point.
-		/// </summary>
-		[STAThread]
+        public static bool closedSession { get; set; }
+
+        /// <summary>
+        /// Program entry point.
+        /// </summary>
+        [STAThread]
 		private static void Main(string[] args)
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new project());
+
+
+            string type = Properties.Settings.Default.user_type;
+            closedSession = false;
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            if (type == "admin") {
+                Application.Run(new admin());
+            }
+            else if (type == "teach") {
+                Application.Run(new teacher());
+            }
+            else if (type == "enter") {
+                Application.Run(new company());
+            }
+            else if (type == "student") {
+                Application.Run(new user());
+            }
+            else {
+                Application.Run(new login());
+            }
+
+            if(closedSession) {
+                Application.Run(new login());
+            }
+
 		}
 		
 	}

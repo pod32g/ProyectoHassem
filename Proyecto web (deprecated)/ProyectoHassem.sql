@@ -17,7 +17,7 @@ CREATE TABLE `DatosUsuario` (
 ENGINE = InnoDB;
 
 CREATE TABLE `Alumnos` (
-	`matricula` int NOT NULL AUTO_INCREMENT,
+	`matricula` int NOT NULL,
 	`usuario_id` int NOT NULL,
 	`carrera` varchar(70) NOT NULL,
 	`nivel` varchar(30) NOT NULL,
@@ -36,8 +36,8 @@ CREATE TABLE `TipoUsuario` (
 
 ENGINE = InnoDB;
 
-CREATE TABLE `Profesores` (
-	`codigo` int(50) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `Profesor` (
+	`codigo` int(50) NOT NULL,
 	`usuario_id` int NOT NULL,
 	`carrera` varchar(50) NOT NULL,
 	PRIMARY KEY (`codigo`),
@@ -65,11 +65,12 @@ CREATE TABLE `Empresa` (
 ENGINE = InnoDB;
 
 CREATE TABLE `Proyecto` (
-	`id` int NOT NULL,
+	`id` int NOT NULL AUTO_INCREMENT,
 	`nombre` varchar(70) NOT NULL UNIQUE,
 	`fechaInicio` DATE NOT NULL,
 	`fechaFin` DATE NOT NULL,
-	`resultados` longtext NOT NULL,
+	`estatus` varchar(20) NOT NULL,
+	`resultados` longtext,
 	`objetivo` mediumtext NOT NULL,
 	`alumno_encargado` int NOT NULL,
 	`maestro_encargado` int NOT NULL,

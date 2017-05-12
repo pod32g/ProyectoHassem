@@ -81,6 +81,7 @@ namespace UTJ
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Iniciar Sesion";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblMain
             // 

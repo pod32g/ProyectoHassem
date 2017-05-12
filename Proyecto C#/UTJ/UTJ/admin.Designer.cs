@@ -87,24 +87,28 @@ namespace UTJ
             this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
             this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.agregarUsuarioToolStripMenuItem.Text = "Agregar usuario";
+            this.agregarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuarioToolStripMenuItem_Click);
             // 
             // modificarUsuarioToolStripMenuItem
             // 
             this.modificarUsuarioToolStripMenuItem.Name = "modificarUsuarioToolStripMenuItem";
             this.modificarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.modificarUsuarioToolStripMenuItem.Text = "Modificar usuario";
+            this.modificarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.modificarUsuarioToolStripMenuItem_Click);
             // 
             // eliminarUsuarioToolStripMenuItem
             // 
             this.eliminarUsuarioToolStripMenuItem.Name = "eliminarUsuarioToolStripMenuItem";
             this.eliminarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.eliminarUsuarioToolStripMenuItem.Text = "Eliminar usuario";
+            this.eliminarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.eliminarUsuarioToolStripMenuItem_Click);
             // 
             // buscarUsuarioToolStripMenuItem
             // 
             this.buscarUsuarioToolStripMenuItem.Name = "buscarUsuarioToolStripMenuItem";
             this.buscarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.buscarUsuarioToolStripMenuItem.Text = "Buscar usuario";
+            this.buscarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.buscarUsuarioToolStripMenuItem_Click);
             // 
             // proyectosToolStripMenuItem
             // 
@@ -122,24 +126,28 @@ namespace UTJ
             this.agregarProyectoToolStripMenuItem.Name = "agregarProyectoToolStripMenuItem";
             this.agregarProyectoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.agregarProyectoToolStripMenuItem.Text = "Agregar proyecto";
+            this.agregarProyectoToolStripMenuItem.Click += new System.EventHandler(this.agregarProyectoToolStripMenuItem_Click);
             // 
             // modificarProyectToolStripMenuItem
             // 
             this.modificarProyectToolStripMenuItem.Name = "modificarProyectToolStripMenuItem";
             this.modificarProyectToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.modificarProyectToolStripMenuItem.Text = "Modificar proyecto";
+            this.modificarProyectToolStripMenuItem.Click += new System.EventHandler(this.modificarProyectToolStripMenuItem_Click);
             // 
             // eliminarProyectoToolStripMenuItem
             // 
             this.eliminarProyectoToolStripMenuItem.Name = "eliminarProyectoToolStripMenuItem";
             this.eliminarProyectoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.eliminarProyectoToolStripMenuItem.Text = "Eliminar proyecto";
+            this.eliminarProyectoToolStripMenuItem.Click += new System.EventHandler(this.eliminarProyectoToolStripMenuItem_Click);
             // 
             // buscarProyectoToolStripMenuItem
             // 
             this.buscarProyectoToolStripMenuItem.Name = "buscarProyectoToolStripMenuItem";
             this.buscarProyectoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.buscarProyectoToolStripMenuItem.Text = "Buscar proyecto";
+            this.buscarProyectoToolStripMenuItem.Click += new System.EventHandler(this.buscarProyectoToolStripMenuItem_Click);
             // 
             // sesionToolStripMenuItem
             // 
@@ -152,8 +160,9 @@ namespace UTJ
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -205,6 +214,7 @@ namespace UTJ
             this.button1.TabIndex = 6;
             this.button1.Text = "Guardar cambios";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
             // 

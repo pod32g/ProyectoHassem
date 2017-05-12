@@ -17,6 +17,7 @@ namespace UTJ
 	/// </summary>
 	public partial class admin : Form
 	{
+        private db d = new db();
 		public admin()
 		{
 			//
@@ -29,6 +30,11 @@ namespace UTJ
 			//
 		}
 
+        private void clean() {
+            txtPassAct.Text = "";
+            txtPassNew.Text = "";
+        }
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {
             if (checkBox1.Checked) {
                 txtPassAct.PasswordChar = '\0';
@@ -37,6 +43,57 @@ namespace UTJ
                 txtPassAct.PasswordChar = '*';
                 txtPassNew.PasswordChar = '*';
             }
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e) {
+            Properties.Settings.Default.user_type = "none";
+            Properties.Settings.Default.user_id = 0;
+            Properties.Settings.Default.Save();
+            Program.closedSession = true;
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            if(!d.changePassword(txtPassAct.Text, txtPassNew.Text)) {
+                MessageBox.Show("Error al cambiar la contraseña");
+            } else {
+                MessageBox.Show("Contraseña cambiada");
+                clean();
+            }
+        }
+
+        private void agregarUsuarioToolStripMenuItem_Click(object sender, EventArgs e) {
+            var add = new addUser();
+            add.Show();
+        }
+
+        private void modificarUsuarioToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void eliminarUsuarioToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void buscarUsuarioToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void agregarProyectoToolStripMenuItem_Click(object sender, EventArgs e) {
+            var add = new addProject();
+            add.Show();
+        }
+
+        private void modificarProyectToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void eliminarProyectoToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void buscarProyectoToolStripMenuItem_Click(object sender, EventArgs e) {
+
         }
     }
 }
