@@ -68,7 +68,8 @@ namespace UTJ
         }
 
         private void modificarUsuarioToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            var mod = new editUsers();
+            mod.Show();
         }
 
         private void eliminarUsuarioToolStripMenuItem_Click(object sender, EventArgs e) {

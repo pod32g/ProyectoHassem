@@ -122,7 +122,7 @@
             // verProyectosToolStripMenuItem
             // 
             this.verProyectosToolStripMenuItem.Name = "verProyectosToolStripMenuItem";
-            this.verProyectosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.verProyectosToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.verProyectosToolStripMenuItem.Text = "Ver Proyectos";
             // 
             // sesionToolStripMenuItem
@@ -136,8 +136,9 @@
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // company
             // 

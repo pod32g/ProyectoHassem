@@ -34,9 +34,9 @@
             this.proyectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarProyectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarProyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verEstadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verEstadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +134,12 @@
             this.buscarProyectoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.buscarProyectoToolStripMenuItem.Text = "Buscar proyecto";
             // 
+            // verEstadisticasToolStripMenuItem
+            // 
+            this.verEstadisticasToolStripMenuItem.Name = "verEstadisticasToolStripMenuItem";
+            this.verEstadisticasToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.verEstadisticasToolStripMenuItem.Text = "Ver estadisticas";
+            // 
             // sesionToolStripMenuItem
             // 
             this.sesionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -147,12 +153,7 @@
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
             this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
-            // 
-            // verEstadisticasToolStripMenuItem
-            // 
-            this.verEstadisticasToolStripMenuItem.Name = "verEstadisticasToolStripMenuItem";
-            this.verEstadisticasToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.verEstadisticasToolStripMenuItem.Text = "Ver estadisticas";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // teacher
             // 

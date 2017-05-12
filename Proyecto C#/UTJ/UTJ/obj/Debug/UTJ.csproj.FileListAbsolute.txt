@@ -60,3 +60,4 @@ C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.user.res
 C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.csproj.GenerateResource.Cache
 C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.exe
 C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.pdb
+C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.editUsers.resources

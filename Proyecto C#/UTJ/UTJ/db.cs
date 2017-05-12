@@ -1,5 +1,6 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 
 namespace UTJ {
@@ -109,7 +110,7 @@ namespace UTJ {
             MySqlConnection con = this.connect();
             con.Open();
             MySqlCommand comando = new MySqlCommand(String.Format("INSERT INTO DatosUsuario VALUES ('{0}', '{1}', '{2}', '{3}', '{4}');",
-                                                    id, name, name2, mat, pat), con);
+                                                    id, name, name2, pat, mat), con);
             int updatedRows = comando.ExecuteNonQuery();
             Console.WriteLine("Datos usuario Rows: " + updatedRows);
             if (updatedRows > 0) {
@@ -214,9 +215,9 @@ namespace UTJ {
         public bool updateData(int id, string name, string name2, string pat, string mat) {
             MySqlConnection con = this.connect();
             con.Open();
-            MySqlCommand comando = new MySqlCommand(String.Format("UPDATE DatosUsuario SET nombre1 = '{0}', SET nombre2 = '{1}', SET pat = '{2}', SET mat = '{3}' WHERE usuario_id = '{4}';",
-                                                    name, name2, mat, pat, id), con);
-            int updatedRows = comando.ExecuteNonQuery();
+            MySqlCommand comando = new MySqlCommand(String.Format("UPDATE DatosUsuario SET nombre1 = '{0}', nombre2 = '{1}', apellidoPaterno = '{2}', apellidoMaterno = '{3}' WHERE usuario_id = '{4}';",
+                                                    name, name2, pat, mat, id), con);
+          int updatedRows = comando.ExecuteNonQuery();
             Console.WriteLine("Datos usuario Rows: " + updatedRows);
             if (updatedRows > 0) {
                 con.Close();
@@ -229,7 +230,7 @@ namespace UTJ {
         public bool updateContact(int id, string correo, string cargo, string telefono) {
             MySqlConnection con = this.connect();
             con.Open();
-            MySqlCommand comando = new MySqlCommand(String.Format("UPDATE DatosContacto SET correo = '{0}', cargo = '{1}', telefono = '{2}' WHERE usuario_id =  '{3}';",
+            MySqlCommand comando = new MySqlCommand(String.Format("UPDATE DatosContacto SET correo = '{0}', cargo = '{1}', telefono = '{2}' WHERE id_usuario = '{3}';",
                                                     correo, cargo, telefono, id), con);
             int updatedRows = comando.ExecuteNonQuery();
             Console.WriteLine("Datos contacto Rows: " + updatedRows);
@@ -301,6 +302,21 @@ namespace UTJ {
             return false;
         }
 
+        public bool updateUsrType(int id, string type) {
+            MySqlConnection con = this.connect();
+            con.Open();
+            MySqlCommand comando = new MySqlCommand(String.Format("UPDATE TipoUsuario SET tipo = '{0}' WHERE usuario_id = '{1}';",
+                                                    type, id), con);
+            int updatedRows = comando.ExecuteNonQuery();
+            Console.WriteLine("TipoUsuario Rows: " + updatedRows);
+            if (updatedRows > 0) {
+                con.Close();
+                return true;
+            }
+            con.Close();
+            return false;
+        }
+
         public int getProjectId(string name) {
             MySqlConnection con = this.connect();
             con.Open();
@@ -315,7 +331,108 @@ namespace UTJ {
             return id;
         }
 
-        //public string
+        public int getIDN(string name) {
+            MySqlConnection con = this.connect();
+            con.Open();
+            MySqlCommand comando = new MySqlCommand(String.Format("SELECT usuario_id FROM DatosUsuario WHERE nombre1='{0}'", name), con);
+            MySqlDataReader myReader = comando.ExecuteReader();
+            int id = new int();
+            while (myReader.Read()) {
+                id = myReader.GetInt32(myReader.GetOrdinal("usuario_id"));
+            }
+
+            con.Close();
+            return id;
+        }
+
+        public Dictionary<string, string> getUserData(string name) {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            MySqlConnection conexion = this.connect();
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM DatosUsuario WHERE nombre1 = '{0}';", name), conexion);
+            conexion.Open();
+            MySqlDataReader myReader;
+            myReader = comando.ExecuteReader();
+            while (myReader.Read()) {
+                data["id"] = myReader.GetInt32(myReader.GetOrdinal("usuario_id")).ToString();
+                data["nombre1"] = myReader.GetString(myReader.GetOrdinal("nombre1"));
+                data["nombre2"] = myReader.GetString(myReader.GetOrdinal("nombre2"));
+                data["mat"] = myReader.GetString(myReader.GetOrdinal("apellidoMaterno"));
+                data["pat"] = myReader.GetString(myReader.GetOrdinal("apellidoPaterno"));
+            }
+            return data;
+        }
+
+        public Dictionary<string, string> getStudent(int id) {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            MySqlConnection conexion = this.connect();
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM Alumnos WHERE usuario_id = '{0}';", id), conexion);
+            conexion.Open();
+            MySqlDataReader myReader;
+            myReader = comando.ExecuteReader();
+            while (myReader.Read()) {
+                data["matricula"] = myReader.GetInt32(myReader.GetOrdinal("matricula")).ToString();
+                data["carrera"] = myReader.GetString(myReader.GetOrdinal("carrera"));
+                data["nivel"] = myReader.GetString(myReader.GetOrdinal("nivel"));
+                data["turno"] = myReader.GetString(myReader.GetOrdinal("turno"));
+            }
+            return data;
+        } 
+
+        public Dictionary<string, string> getTeacher(int id) {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            MySqlConnection conexion = this.connect();
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM Profesores WHERE usuario_id = '{0}';", id), conexion);
+            conexion.Open();
+            MySqlDataReader myReader;
+            myReader = comando.ExecuteReader();
+            while (myReader.Read()) {
+                data["codigo"] = myReader.GetInt32(myReader.GetOrdinal("codigo")).ToString();
+                data["carrera"] = myReader.GetString(myReader.GetOrdinal("carrera"));
+            }
+            return data;
+        }
+
+        public Dictionary<string, string> getCompany(int id) {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            MySqlConnection conexion = this.connect();
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM Empresa WHERE id_usuario = '{0}';", id), conexion);
+            conexion.Open();
+            MySqlDataReader myReader;
+            myReader = comando.ExecuteReader();
+            while (myReader.Read()) {
+                data["nombre"] = myReader.GetString(myReader.GetOrdinal("nombre"));
+            }
+            return data;
+        }
+
+        public Dictionary<string, string> getContact(int id) {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            MySqlConnection conexion = this.connect();
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM DatosContacto WHERE id_usuario = '{0}';", id), conexion);
+            conexion.Open();
+            MySqlDataReader myReader;
+            myReader = comando.ExecuteReader();
+            while (myReader.Read()) {
+                data["telefono"] = myReader.GetInt32(myReader.GetOrdinal("telefono")).ToString();
+                data["correo"] = myReader.GetString(myReader.GetOrdinal("correo"));
+                data["cargo"] = myReader.GetString(myReader.GetOrdinal("cargo"));
+            }
+            return data;
+        }
+
+        public Dictionary<string, string> getUserNameP(int id) {
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            MySqlConnection conexion = this.connect();
+            MySqlCommand comando = new MySqlCommand(string.Format("SELECT * FROM Usuario WHERE id = '{0}';", id), conexion);
+            conexion.Open();
+            MySqlDataReader myReader;
+            myReader = comando.ExecuteReader();
+            while (myReader.Read()) {
+                data["username"] = myReader.GetString(myReader.GetOrdinal("userName"));
+                data["password"] = myReader.GetString(myReader.GetOrdinal("password"));
+            }
+            return data;
+        }
 
         public db() {
 		}

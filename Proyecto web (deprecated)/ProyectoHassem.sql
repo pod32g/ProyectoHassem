@@ -1,7 +1,7 @@
 CREATE TABLE `Usuario` (
 	`id` int NOT NULL AUTO_INCREMENT,
 	`userName` varchar(70) NOT NULL UNIQUE,
-	`password` varchar(70) NOT NULL UNIQUE,
+	`password` varchar(70) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -36,7 +36,7 @@ CREATE TABLE `TipoUsuario` (
 
 ENGINE = InnoDB;
 
-CREATE TABLE `Profesor` (
+CREATE TABLE `Profesores` (
 	`codigo` int(50) NOT NULL,
 	`usuario_id` int NOT NULL,
 	`carrera` varchar(50) NOT NULL,
@@ -80,3 +80,5 @@ CREATE TABLE `Proyecto` (
 )
 
 ENGINE = InnoDB;
+
+
