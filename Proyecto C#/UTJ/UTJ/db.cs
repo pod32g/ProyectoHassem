@@ -217,7 +217,7 @@ namespace UTJ {
             con.Open();
             MySqlCommand comando = new MySqlCommand(String.Format("UPDATE DatosUsuario SET nombre1 = '{0}', nombre2 = '{1}', apellidoPaterno = '{2}', apellidoMaterno = '{3}' WHERE usuario_id = '{4}';",
                                                     name, name2, pat, mat, id), con);
-          int updatedRows = comando.ExecuteNonQuery();
+            int updatedRows = comando.ExecuteNonQuery();
             Console.WriteLine("Datos usuario Rows: " + updatedRows);
             if (updatedRows > 0) {
                 con.Close();
@@ -310,6 +310,22 @@ namespace UTJ {
             int updatedRows = comando.ExecuteNonQuery();
             Console.WriteLine("TipoUsuario Rows: " + updatedRows);
             if (updatedRows > 0) {
+                con.Close();
+                return true;
+            }
+            con.Close();
+            return false;
+        } 
+
+        public bool updateUserPass(int id, string user, string pass) {
+            MySqlConnection con = this.connect();
+            con.Open();
+            MySqlCommand comando = new MySqlCommand(String.Format("UPDATE Usuario SET userName = '{0}', password = '{1}' WHERE id = '{2}';",
+                                                    user, pass, id), con);
+            int updatedRows = comando.ExecuteNonQuery();
+            Console.WriteLine("TipoUsuario Rows: " + updatedRows);
+            if (updatedRows > 0)
+            {
                 con.Close();
                 return true;
             }

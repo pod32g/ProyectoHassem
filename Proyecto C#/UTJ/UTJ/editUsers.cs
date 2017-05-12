@@ -144,7 +144,7 @@ namespace UTJ {
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
-            //d.updateUser(txtUserName.Text, txtPasswd.Text);
+            d.updateUserPass(cId, txtUserName.Text, txtPasswd.Text);
             d.updateData(cId, txtName.Text, txtName2.Text, txtPat.Text, txtMat.Text);
 
             switch (combUsrType.SelectedIndex) {

@@ -102,6 +102,12 @@
     <Compile Include="addUser.Designer.cs">
       <DependentUpon>addUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="deleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteUser.Designer.cs">
+      <DependentUpon>deleteUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="editUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="company.resx">
       <DependentUpon>company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteUser.resx">
+      <DependentUpon>deleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editUsers.resx">
       <DependentUpon>editUsers.cs</DependentUpon>
