@@ -69,3 +69,4 @@ C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.searchPr
 C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.userProject.resources
 C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.teacherProjects.resources
 C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.companyProjects.resources
+C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.adminProjects.resources

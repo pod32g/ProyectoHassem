@@ -27,7 +27,7 @@ namespace UTJ {
 
             mainChart.Series = new SeriesCollection {
                 new PieSeries {
-                    Title = "En proceso",
+                    Title = "Proyectos En proceso",
                     Values = new ChartValues<int> {curso},
                     PushOut = 15,
                     DataLabels = true,
@@ -35,21 +35,21 @@ namespace UTJ {
                 },
                 
                 new PieSeries {
-                    Title = "Cancelados",
+                    Title = "Proyectos Cancelados",
                     Values = new ChartValues<int> {cancel},
                     PushOut = 15,
                     DataLabels = true,
                     LabelPoint = labelpoint
                 },
                 new PieSeries {
-                    Title = "Suspendidos",
+                    Title = "Proyectos Suspendidos",
                     Values = new ChartValues<int> {suspanded},
                     PushOut = 15,
                     DataLabels = true,
                     LabelPoint = labelpoint
                 },
                 new PieSeries {
-                    Title = "Completados",
+                    Title = "Proyectos Completados",
                     Values = new ChartValues<int> {completed},
                     PushOut = 15,
                     DataLabels = true,

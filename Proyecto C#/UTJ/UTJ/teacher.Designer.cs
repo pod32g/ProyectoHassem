@@ -48,6 +48,7 @@
             this.checkBox1.TabIndex = 15;
             this.checkBox1.Text = "Mostrar contraseñas";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button1
             // 
@@ -57,6 +58,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Guardar cambios";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPassNew
             // 

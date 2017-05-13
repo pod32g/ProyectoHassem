@@ -78,5 +78,9 @@ namespace UTJ
                 }
             }
         }
+
+        private void lblMain_Click(object sender, EventArgs e) {
+
+        }
     }
 }

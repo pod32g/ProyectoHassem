@@ -11,6 +11,7 @@ namespace UTJ {
     public partial class searchProject : Form {
 
         private db d = new db();
+        private string name;
 
         private void disable() {
             txtCompany.Enabled = false;
@@ -21,6 +22,8 @@ namespace UTJ {
             dateStart.Enabled = false;
             dateEnd.Enabled = false;
             statusBox.Enabled = false;
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
         }
 
         private int getIndex(string data) {
@@ -50,6 +53,7 @@ namespace UTJ {
             try {
                 Dictionary<string, string> data = d.getProyect(txtName.Text);
                 txtName.Text = data["nombre"];
+                this.name = data["nombre"];
                 dateStart.Value = DateTime.Parse(data["inicio"]);
                 dateEnd.Value = DateTime.Parse(data["fin"]);
                 statusBox.SelectedIndex = this.getIndex(data["estatus"]);
@@ -58,9 +62,25 @@ namespace UTJ {
                 txtStudent.Text = data["alumno"];
                 txtTeacher.Text = data["maestro"];
                 txtCompany.Text = data["empresa"];
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
             } catch (Exception ex) {
                 MessageBox.Show("Proyecto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e) {
+            try {
+                var f = new editProject(this.name);
+                f.Show();
+            } catch(Exception ex) { }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e) {
+            try {
+                var f = new deleteProject(this.name);
+                f.Show();
+            } catch (Exception ex) { }
         }
     }
 }

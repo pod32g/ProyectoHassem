@@ -85,11 +85,13 @@ namespace UTJ
             // 
             // lblMain
             // 
-            this.lblMain.Location = new System.Drawing.Point(141, 134);
+            this.lblMain.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMain.Location = new System.Drawing.Point(158, 155);
             this.lblMain.Name = "lblMain";
             this.lblMain.Size = new System.Drawing.Size(250, 108);
             this.lblMain.TabIndex = 4;
-            this.lblMain.Text = "Placeholder text";
+            this.lblMain.Text = "Sistema Manejador de Proyectos para la CMIC ";
+            this.lblMain.Click += new System.EventHandler(this.lblMain_Click);
             // 
             // label1
             // 

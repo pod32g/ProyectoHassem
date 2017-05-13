@@ -116,6 +116,66 @@ namespace UTJ {
             return false;
         }
 
+        public bool companyCheck(string name) {
+            MySqlConnection con = this.connect();
+            bool exists = false;
+            con.Open();
+            using (MySqlCommand cmd = new MySqlCommand(String.Format("select count(*) from Empresa where nombre = '{0}'", name), con)) {
+                object result = cmd.ExecuteScalar();
+                if (result != null) {
+                    if (int.Parse(string.Format("{0}", result)) > 0) {
+                        exists = true;
+                    }
+                }
+            }
+            if (exists) {
+                con.Close();
+                return true;
+            }
+            con.Close();
+            return false;
+        }
+
+        public bool studentCheck(int code) {
+            MySqlConnection con = this.connect();
+            bool exists = false;
+            con.Open();
+            using (MySqlCommand cmd = new MySqlCommand(String.Format("select count(*) from Alumnos where matricula = '{0}'", code), con)) {
+                object result = cmd.ExecuteScalar();
+                if (result != null) {
+                    if (int.Parse(string.Format("{0}", result)) > 0) {
+                        exists = true;
+                    }
+                }
+            }
+            if (exists) {
+                con.Close();
+                return true;
+            }
+            con.Close();
+            return false;
+        }
+
+        public bool teacherCheck(int code) {
+            MySqlConnection con = this.connect();
+            bool exists = false;
+            con.Open();
+            using (MySqlCommand cmd = new MySqlCommand(String.Format("select count(*) from Profesores where codigo = '{0}'", code), con)) {
+                object result = cmd.ExecuteScalar();
+                if (result != null) {
+                    if (int.Parse(string.Format("{0}", result)) > 0) {
+                        exists = true;
+                    }
+                }
+            }
+            if (exists) {
+                con.Close();
+                return true;
+            }
+            con.Close();
+            return false;
+        }
+
         public bool userAlreadyOnProject(int id) {
             MySqlConnection con = this.connect();
             bool exists = false;

@@ -59,6 +59,7 @@
             // 
             // txtEmpresa
             // 
+            this.txtEmpresa.Enabled = false;
             this.txtEmpresa.Location = new System.Drawing.Point(614, 214);
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(257, 20);
@@ -75,6 +76,7 @@
             // 
             // txtTurno
             // 
+            this.txtTurno.Enabled = false;
             this.txtTurno.Location = new System.Drawing.Point(614, 132);
             this.txtTurno.Name = "txtTurno";
             this.txtTurno.Size = new System.Drawing.Size(257, 20);
@@ -91,6 +93,7 @@
             // 
             // txtNivel
             // 
+            this.txtNivel.Enabled = false;
             this.txtNivel.Location = new System.Drawing.Point(614, 89);
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.Size = new System.Drawing.Size(257, 20);
@@ -107,6 +110,7 @@
             // 
             // txtCarrera
             // 
+            this.txtCarrera.Enabled = false;
             this.txtCarrera.Location = new System.Drawing.Point(614, 49);
             this.txtCarrera.Name = "txtCarrera";
             this.txtCarrera.Size = new System.Drawing.Size(257, 20);
@@ -123,6 +127,7 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.Enabled = false;
             this.txtPhone.Location = new System.Drawing.Point(330, 277);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(257, 20);
@@ -139,6 +144,7 @@
             // 
             // txtPosition
             // 
+            this.txtPosition.Enabled = false;
             this.txtPosition.Location = new System.Drawing.Point(19, 325);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(257, 20);
@@ -155,6 +161,7 @@
             // 
             // txtMail
             // 
+            this.txtMail.Enabled = false;
             this.txtMail.Location = new System.Drawing.Point(19, 276);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(257, 20);
@@ -171,6 +178,7 @@
             // 
             // txtCode
             // 
+            this.txtCode.Enabled = false;
             this.txtCode.Location = new System.Drawing.Point(330, 214);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(257, 20);
@@ -198,6 +206,7 @@
             // 
             this.combUsrType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.combUsrType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combUsrType.Enabled = false;
             this.combUsrType.FormattingEnabled = true;
             this.combUsrType.Items.AddRange(new object[] {
             "Maestro",
@@ -212,6 +221,7 @@
             // 
             // txtPasswd
             // 
+            this.txtPasswd.Enabled = false;
             this.txtPasswd.Location = new System.Drawing.Point(330, 132);
             this.txtPasswd.Name = "txtPasswd";
             this.txtPasswd.PasswordChar = '*';
@@ -220,6 +230,7 @@
             // 
             // txtUserName
             // 
+            this.txtUserName.Enabled = false;
             this.txtUserName.Location = new System.Drawing.Point(19, 131);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(257, 20);
@@ -245,6 +256,7 @@
             // 
             // txtName2
             // 
+            this.txtName2.Enabled = false;
             this.txtName2.Location = new System.Drawing.Point(19, 88);
             this.txtName2.Name = "txtName2";
             this.txtName2.Size = new System.Drawing.Size(257, 20);
@@ -252,6 +264,7 @@
             // 
             // txtMat
             // 
+            this.txtMat.Enabled = false;
             this.txtMat.Location = new System.Drawing.Point(330, 89);
             this.txtMat.Name = "txtMat";
             this.txtMat.Size = new System.Drawing.Size(257, 20);
@@ -259,6 +272,7 @@
             // 
             // txtPat
             // 
+            this.txtPat.Enabled = false;
             this.txtPat.Location = new System.Drawing.Point(330, 49);
             this.txtPat.Name = "txtPat";
             this.txtPat.Size = new System.Drawing.Size(257, 20);
@@ -309,6 +323,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Location = new System.Drawing.Point(795, 342);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);

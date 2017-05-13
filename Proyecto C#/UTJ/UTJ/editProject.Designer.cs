@@ -42,7 +42,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSave
@@ -211,22 +210,11 @@
             this.label9.TabIndex = 33;
             this.label9.Text = "Resultados:";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(627, 595);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(105, 23);
-            this.btnSearch.TabIndex = 34;
-            this.btnSearch.Text = "Buscar";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // editProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 630);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.label8);
@@ -274,6 +262,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnSearch;
     }
 }

@@ -88,22 +88,36 @@ namespace UTJ
         }
 
         private void modificarProyectToolStripMenuItem_Click(object sender, EventArgs e) {
-            var mod = new editProject();
-            mod.Show();
+           
         }
 
         private void eliminarProyectoToolStripMenuItem_Click(object sender, EventArgs e) {
-            var del = new deleteProject();
-            del.Show();
+           
         }
 
         private void buscarProyectoToolStripMenuItem_Click(object sender, EventArgs e) {
-            var se = new searchProject();
-            se.Show();
+            try {
+                var se = new searchProject();
+                se.Show();
+            }catch(Exception ex) { }
         }
 
         private void proyectosToolStripMenuItem_Click(object sender, EventArgs e) {
 
+        }
+
+        private void verProyectosToolStripMenuItem_Click(object sender, EventArgs e) {
+            
+        }
+
+        private void verProyectosToolStripMenuItem_Click_1(object sender, EventArgs e) {
+            var lol = new adminProjects();
+            lol.Show();
+        }
+
+        private void verEstadisticasToolStripMenuItem_Click(object sender, EventArgs e) {
+            var f = new statistics();
+            f.Show();
         }
     }
 }

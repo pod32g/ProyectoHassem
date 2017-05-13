@@ -85,14 +85,10 @@ namespace UTJ {
             return "none";
         }
 
-        public editProject() {
+        public editProject(string name) {
             InitializeComponent();
-            this.disable();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e) {
             try {
-                Dictionary<string, string> data = d.getProyect(txtName.Text);
+                Dictionary<string, string> data = d.getProyect(name);
                 cId = int.Parse(data["id"]);
                 txtName.Text = data["nombre"];
                 dateStart.Value = DateTime.Parse(data["inicio"]);
@@ -109,11 +105,16 @@ namespace UTJ {
             }
         }
 
+        private void btnSearch_Click(object sender, EventArgs e) {
+            
+        }
+
         private void btnSave_Click(object sender, EventArgs e) {
             if (d.updateProject(cId, txtName.Text, dateStart.Value.ToString("yyyy-MM-dd"), dateEnd.Value.ToString("yyyy-MM-dd"), this.getStatus(statusBox.SelectedIndex), txtResult.Text, txtObjective.Text, int.Parse(txtStudent.Text), int.Parse(txtTeacher.Text), txtCompany.Text)) {
                 MessageBox.Show("Proyecto Modificado");
                 this.clear();
                 this.disable();
+                this.Close();
             } else {
                 MessageBox.Show("Hubo un error al modificar el proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

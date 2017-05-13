@@ -102,6 +102,13 @@ namespace UTJ {
                         combUsrType.SelectedIndex = 3;
                         break;
                 }
+                txtName.Enabled = true;
+                txtName2.Enabled = true;
+                txtPat.Enabled = true;
+                txtMat.Enabled = true;
+                txtUserName.Enabled = true;
+                txtPasswd.Enabled = true;
+                combUsrType.Enabled = true;
                 cId = int.Parse(data["id"]);
                 btnSave.Enabled = true;
             } catch(Exception ex) {

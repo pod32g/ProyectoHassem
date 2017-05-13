@@ -48,11 +48,19 @@ namespace UTJ
         private void btnSave_Click(object sender, EventArgs e) {
             try {
                 if(!d.userAlreadyOnProject(int.Parse(txtStudent.Text))) {
-                    if (d.addProject(txtName.Text, dateStart.Value.ToString("yyyy-MM-dd"), dateEnd.Value.ToString("yyyy-MM-dd"), "en marcha", "", txtObjective.Text, int.Parse(txtStudent.Text), int.Parse(txtTeacher.Text), txtCompany.Text)) {
-                        MessageBox.Show("Proyecto Agregado");
-                        this.clear();
+                    if(d.companyCheck(txtCompany.Text)) {
+                        if(d.studentCheck(int.Parse(txtStudent.Text))) {
+                            if (d.teacherCheck(int.Parse(txtTeacher.Text))) {
+                                if (d.addProject(txtName.Text, dateStart.Value.ToString("yyyy-MM-dd"), dateEnd.Value.ToString("yyyy-MM-dd"), "en marcha", "", txtObjective.Text, int.Parse(txtStudent.Text), int.Parse(txtTeacher.Text), txtCompany.Text)) {
+                                    MessageBox.Show("Proyecto Agregado");
+                                    this.clear();
+                                } else {
+                                    MessageBox.Show("Hubo un error al agregar el proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
                     } else {
-                        MessageBox.Show("Hubo un error al agregar el proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("La empresa no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 } else {
                     MessageBox.Show("El alumno ya tiene proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

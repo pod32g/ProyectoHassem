@@ -55,14 +55,10 @@ namespace UTJ {
             return -1;
         }
 
-        public deleteProject() {
+        public deleteProject(string name) {
             InitializeComponent();
-            this.disable();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e) {
             try {
-                Dictionary<string, string> data = d.getProyect(txtName.Text);
+                Dictionary<string, string> data = d.getProyect(name);
                 cId = int.Parse(data["id"]);
                 txtName.Text = data["nombre"];
                 dateStart.Value = DateTime.Parse(data["inicio"]);
@@ -79,13 +75,24 @@ namespace UTJ {
             }
         }
 
+        private void btnSearch_Click(object sender, EventArgs e) {
+        }
+
         private void btnSave_Click(object sender, EventArgs e) {
-            try {
-                d.deleteProject(cId);
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro que desea elimiar el proyecto?", "Advertencia", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes) {
+                try {
+                    d.deleteProject(cId);
+                    this.Close();
+                } catch (Exception ex) {
+                    MessageBox.Show("Ocurrio un error al procesar los datos, verifique que los datos sean correctos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                MessageBox.Show("Proyecto eliminado");
                 this.clear();
-            } catch (Exception ex) {
-                MessageBox.Show("Ocurrio un error al procesar los datos, verifique que los datos sean correctos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if (dialogResult == DialogResult.No) {
+                MessageBox.Show("Proyecto no eliminado");
             }
+            
         }
     }
 }

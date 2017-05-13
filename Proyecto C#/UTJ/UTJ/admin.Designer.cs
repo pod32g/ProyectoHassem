@@ -44,8 +44,6 @@ namespace UTJ
             this.buscarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proyectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarProyectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarProyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarProyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +54,8 @@ namespace UTJ
             this.txtPassNew = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.verProyectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verEstadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +77,8 @@ namespace UTJ
             this.agregarUsuarioToolStripMenuItem,
             this.modificarUsuarioToolStripMenuItem,
             this.eliminarUsuarioToolStripMenuItem,
-            this.buscarUsuarioToolStripMenuItem});
+            this.buscarUsuarioToolStripMenuItem,
+            this.verEstadisticasToolStripMenuItem});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
@@ -114,9 +115,8 @@ namespace UTJ
             // 
             this.proyectosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarProyectoToolStripMenuItem,
-            this.modificarProyectToolStripMenuItem,
-            this.eliminarProyectoToolStripMenuItem,
-            this.buscarProyectoToolStripMenuItem});
+            this.buscarProyectoToolStripMenuItem,
+            this.verProyectosToolStripMenuItem});
             this.proyectosToolStripMenuItem.Name = "proyectosToolStripMenuItem";
             this.proyectosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.proyectosToolStripMenuItem.Text = "Proyectos";
@@ -128,20 +128,6 @@ namespace UTJ
             this.agregarProyectoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.agregarProyectoToolStripMenuItem.Text = "Agregar proyecto";
             this.agregarProyectoToolStripMenuItem.Click += new System.EventHandler(this.agregarProyectoToolStripMenuItem_Click);
-            // 
-            // modificarProyectToolStripMenuItem
-            // 
-            this.modificarProyectToolStripMenuItem.Name = "modificarProyectToolStripMenuItem";
-            this.modificarProyectToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.modificarProyectToolStripMenuItem.Text = "Modificar proyecto";
-            this.modificarProyectToolStripMenuItem.Click += new System.EventHandler(this.modificarProyectToolStripMenuItem_Click);
-            // 
-            // eliminarProyectoToolStripMenuItem
-            // 
-            this.eliminarProyectoToolStripMenuItem.Name = "eliminarProyectoToolStripMenuItem";
-            this.eliminarProyectoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.eliminarProyectoToolStripMenuItem.Text = "Eliminar proyecto";
-            this.eliminarProyectoToolStripMenuItem.Click += new System.EventHandler(this.eliminarProyectoToolStripMenuItem_Click);
             // 
             // buscarProyectoToolStripMenuItem
             // 
@@ -161,7 +147,7 @@ namespace UTJ
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
@@ -228,6 +214,20 @@ namespace UTJ
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // verProyectosToolStripMenuItem
+            // 
+            this.verProyectosToolStripMenuItem.Name = "verProyectosToolStripMenuItem";
+            this.verProyectosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.verProyectosToolStripMenuItem.Text = "Ver proyectos";
+            this.verProyectosToolStripMenuItem.Click += new System.EventHandler(this.verProyectosToolStripMenuItem_Click_1);
+            // 
+            // verEstadisticasToolStripMenuItem
+            // 
+            this.verEstadisticasToolStripMenuItem.Name = "verEstadisticasToolStripMenuItem";
+            this.verEstadisticasToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.verEstadisticasToolStripMenuItem.Text = "Ver estadisticas";
+            this.verEstadisticasToolStripMenuItem.Click += new System.EventHandler(this.verEstadisticasToolStripMenuItem_Click);
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,8 +259,6 @@ namespace UTJ
         private System.Windows.Forms.ToolStripMenuItem buscarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proyectosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarProyectoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarProyectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarProyectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarProyectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
@@ -271,5 +269,7 @@ namespace UTJ
         private System.Windows.Forms.TextBox txtPassNew;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ToolStripMenuItem verProyectosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verEstadisticasToolStripMenuItem;
     }
 }
