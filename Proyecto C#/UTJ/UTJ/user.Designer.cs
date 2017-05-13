@@ -63,13 +63,15 @@
             // 
             this.verProyectosToolStripMenuItem.Name = "verProyectosToolStripMenuItem";
             this.verProyectosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.verProyectosToolStripMenuItem.Text = "Ver Proyectos";
+            this.verProyectosToolStripMenuItem.Text = "Proyecto actual";
+            this.verProyectosToolStripMenuItem.Click += new System.EventHandler(this.verProyectosToolStripMenuItem_Click);
             // 
             // agregarResultadosToolStripMenuItem
             // 
             this.agregarResultadosToolStripMenuItem.Name = "agregarResultadosToolStripMenuItem";
             this.agregarResultadosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.agregarResultadosToolStripMenuItem.Text = "Agregar Resultados";
+            this.agregarResultadosToolStripMenuItem.Click += new System.EventHandler(this.agregarResultadosToolStripMenuItem_Click);
             // 
             // sesionToolStripMenuItem
             // 
@@ -82,7 +84,7 @@
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
@@ -105,6 +107,7 @@
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Guardar cambios";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtPassNew
             // 

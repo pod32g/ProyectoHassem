@@ -24,5 +24,15 @@ namespace UTJ {
             Program.closedSession = true;
             this.Close();
         }
+
+        private void verProyectosToolStripMenuItem_Click(object sender, EventArgs e) {
+            var lol = new companyProjects();
+            lol.Show();
+        }
+
+        private void verEstadisticasToolStripMenuItem_Click(object sender, EventArgs e) {
+            var es = new statistics();
+            es.Show();
+        }
     }
 }

@@ -95,12 +95,24 @@
     <Compile Include="company.Designer.cs">
       <DependentUpon>company.cs</DependentUpon>
     </Compile>
+    <Compile Include="companyProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="companyProjects.Designer.cs">
+      <DependentUpon>companyProjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="db.cs" />
     <Compile Include="addUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="addUser.Designer.cs">
       <DependentUpon>addUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteProject.Designer.cs">
+      <DependentUpon>deleteProject.cs</DependentUpon>
     </Compile>
     <Compile Include="deleteUser.cs">
       <SubType>Form</SubType>
@@ -150,6 +162,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="searchProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchProject.Designer.cs">
+      <DependentUpon>searchProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,11 +186,23 @@
     <Compile Include="teacher.Designer.cs">
       <DependentUpon>teacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="teacherProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teacherProjects.Designer.cs">
+      <DependentUpon>teacherProjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="user.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="user.Designer.cs">
       <DependentUpon>user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userProject.Designer.cs">
+      <DependentUpon>userProject.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +229,12 @@
     <EmbeddedResource Include="company.resx">
       <DependentUpon>company.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="companyProjects.resx">
+      <DependentUpon>companyProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteProject.resx">
+      <DependentUpon>deleteProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="deleteUser.resx">
       <DependentUpon>deleteUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +254,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="searchProject.resx">
+      <DependentUpon>searchProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="searchUser.resx">
       <DependentUpon>searchUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,8 +266,14 @@
     <EmbeddedResource Include="teacher.resx">
       <DependentUpon>teacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="teacherProjects.resx">
+      <DependentUpon>teacherProjects.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="user.resx">
       <DependentUpon>user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userProject.resx">
+      <DependentUpon>userProject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

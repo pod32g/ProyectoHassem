@@ -32,11 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.proyectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarProyectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarProyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verEstadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verProyectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verEstadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,30 +114,11 @@
             // proyectosToolStripMenuItem
             // 
             this.proyectosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modificarProyectToolStripMenuItem,
-            this.buscarProyectoToolStripMenuItem,
+            this.verProyectosToolStripMenuItem,
             this.verEstadisticasToolStripMenuItem});
             this.proyectosToolStripMenuItem.Name = "proyectosToolStripMenuItem";
             this.proyectosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.proyectosToolStripMenuItem.Text = "Proyectos";
-            // 
-            // modificarProyectToolStripMenuItem
-            // 
-            this.modificarProyectToolStripMenuItem.Name = "modificarProyectToolStripMenuItem";
-            this.modificarProyectToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.modificarProyectToolStripMenuItem.Text = "Modificar proyecto";
-            // 
-            // buscarProyectoToolStripMenuItem
-            // 
-            this.buscarProyectoToolStripMenuItem.Name = "buscarProyectoToolStripMenuItem";
-            this.buscarProyectoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.buscarProyectoToolStripMenuItem.Text = "Buscar proyecto";
-            // 
-            // verEstadisticasToolStripMenuItem
-            // 
-            this.verEstadisticasToolStripMenuItem.Name = "verEstadisticasToolStripMenuItem";
-            this.verEstadisticasToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.verEstadisticasToolStripMenuItem.Text = "Ver estadisticas";
             // 
             // sesionToolStripMenuItem
             // 
@@ -151,9 +131,23 @@
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
+            // 
+            // verProyectosToolStripMenuItem
+            // 
+            this.verProyectosToolStripMenuItem.Name = "verProyectosToolStripMenuItem";
+            this.verProyectosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.verProyectosToolStripMenuItem.Text = "Ver proyectos";
+            this.verProyectosToolStripMenuItem.Click += new System.EventHandler(this.verProyectosToolStripMenuItem_Click);
+            // 
+            // verEstadisticasToolStripMenuItem
+            // 
+            this.verEstadisticasToolStripMenuItem.Name = "verEstadisticasToolStripMenuItem";
+            this.verEstadisticasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.verEstadisticasToolStripMenuItem.Text = "Ver estadisticas";
+            this.verEstadisticasToolStripMenuItem.Click += new System.EventHandler(this.verEstadisticasToolStripMenuItem_Click);
             // 
             // teacher
             // 
@@ -188,10 +182,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem proyectosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarProyectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscarProyectoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verEstadisticasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verProyectosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verEstadisticasToolStripMenuItem;
     }
 }

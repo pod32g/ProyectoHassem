@@ -64,3 +64,8 @@ C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.editUser
 C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.deleteUser.resources
 C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.searchUser.resources
 C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.editProject.resources
+C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.deleteProject.resources
+C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.searchProject.resources
+C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.userProject.resources
+C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.teacherProjects.resources
+C:\Users\David\Desktop\ProyectoHassem\Proyecto C#\UTJ\UTJ\obj\Debug\UTJ.companyProjects.resources

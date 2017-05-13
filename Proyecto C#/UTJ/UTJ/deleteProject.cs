@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace UTJ {
-    public partial class editProject : Form {
+    public partial class deleteProject : Form {
 
         private db d = new db();
         private int cId;
@@ -25,18 +25,6 @@ namespace UTJ {
             statusBox.Enabled = false;
         }
 
-        private void enable() {
-            statusBox.Enabled = true;
-            txtCompany.Enabled = true;
-            txtObjective.Enabled = true;
-            txtResult.Enabled = true;
-            txtStudent.Enabled = true;
-            txtTeacher.Enabled = true;
-            dateStart.Enabled = true;
-            dateEnd.Enabled = true;
-            btnSave.Enabled = true;
-        }
-
         private void clear() {
             txtCompany.Text = "";
             txtName.Text = "";
@@ -50,7 +38,7 @@ namespace UTJ {
         }
 
         private int getIndex(string data) {
-            switch(data) {
+            switch (data) {
                 case "en marcha":
                     return 0;
                     break;
@@ -67,25 +55,7 @@ namespace UTJ {
             return -1;
         }
 
-        private string getStatus(int index) {
-            switch (index) {
-                case 0:
-                    return "en marcha";
-                    break;
-                case 1:
-                    return "suspendido";
-                    break;
-                case 2:
-                    return "cancelado";
-                    break;
-                case 3:
-                    return "completado";
-                    break;
-            }
-            return "none";
-        }
-
-        public editProject() {
+        public deleteProject() {
             InitializeComponent();
             this.disable();
         }
@@ -103,22 +73,16 @@ namespace UTJ {
                 txtStudent.Text = data["alumno"];
                 txtTeacher.Text = data["maestro"];
                 txtCompany.Text = data["empresa"];
-                this.enable();
+                btnSave.Enabled = true;
             } catch (Exception ex) {
                 MessageBox.Show("Proyecto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
-            if (d.updateProject(cId, txtName.Text, dateStart.Value.ToString("yyyy-MM-dd"), dateEnd.Value.ToString("yyyy-MM-dd"), this.getStatus(statusBox.SelectedIndex), txtResult.Text, txtObjective.Text, int.Parse(txtStudent.Text), int.Parse(txtTeacher.Text), txtCompany.Text)) {
-                MessageBox.Show("Proyecto Modificado");
-                this.clear();
-                this.disable();
-            } else {
-                MessageBox.Show("Hubo un error al modificar el proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             try {
-                
+                d.deleteProject(cId);
+                this.clear();
             } catch (Exception ex) {
                 MessageBox.Show("Ocurrio un error al procesar los datos, verifique que los datos sean correctos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

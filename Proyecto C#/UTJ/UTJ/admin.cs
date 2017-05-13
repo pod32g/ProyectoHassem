@@ -93,10 +93,16 @@ namespace UTJ
         }
 
         private void eliminarProyectoToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            var del = new deleteProject();
+            del.Show();
         }
 
         private void buscarProyectoToolStripMenuItem_Click(object sender, EventArgs e) {
+            var se = new searchProject();
+            se.Show();
+        }
+
+        private void proyectosToolStripMenuItem_Click(object sender, EventArgs e) {
 
         }
     }

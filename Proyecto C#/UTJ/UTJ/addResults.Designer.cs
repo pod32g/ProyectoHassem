@@ -30,7 +30,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtResults = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -81,6 +80,7 @@
             this.txtResults.Location = new System.Drawing.Point(19, 87);
             this.txtResults.Multiline = true;
             this.txtResults.Name = "txtResults";
+            this.txtResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtResults.Size = new System.Drawing.Size(327, 244);
             this.txtResults.TabIndex = 5;
             // 
@@ -92,22 +92,13 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(423, 304);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(91, 27);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.Text = "Buscar";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // addResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 343);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtResults);
             this.Controls.Add(this.label3);
@@ -131,6 +122,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtResults;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnSearch;
     }
 }
